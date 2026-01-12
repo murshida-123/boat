@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Boat Interior</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #001f3f, #004080);
+      color: #fff;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+      color: #FFD700;
+      font-weight: 600;
+    }
+
+    .interior-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      justify-items: center;
+    }
+
+    .interior-gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .interior-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+    }
+        .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+  <header>Royal Boat Interior Gallery</header>
+
+  <div class="interior-gallery">
+    <img src="interior1.jpg" alt="Interior 1">
+    <img src="interior2.jpg" alt="Interior 2">
+    <img src="interior3.jpg" alt="Interior 3">
+    <img src="interior5.jpg" alt="Interior 4">
+    <img src="interior6.jpg" alt="Interior 5">
+    <img src="interior4.jpg" alt="Interior 6">
+  </div>
+ <a href="booking.html" class="btn">Book Now</a>
+
+  <a href="about.html" class="back-btn">← Back to About</a>
+</body>
+</html>

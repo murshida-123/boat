@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album</title>
+    <style>
+        body{
+                  background: linear-gradient(to bottom right, #001f3f, #004080);
+
+        }
+        h1 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        div img{
+            width: 400px;
+            height: 300px;
+            border: 2px solid #111827;
+            border-radius: 13px;
+            box-shadow: 4px 7px 7px 0px #31212142;
+            cursor: pointer;
+            margin: 10px;
+            transition: 400ms;
+        }
+        div img:hover{
+            filter: grayscale(1);
+            transform: scale(1.03);
+        }
+        .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+            .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+    </style>
+</head>
+<body>
+    <h1>Album</h1>
+    <div>
+                <img src="album.jpg" alt="album-interior">
+
+    </div>
+      <a href="booking.html" class="btn">Book Now</a>
+
+      <a href="services.html" class="back-btn">← Back to Service</a>
+
+</body>
+</html>

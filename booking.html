@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Now - Royal Yacht</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #001f3f, #004080);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFD700;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+/* Booking form box */
+form {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 35px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* Labels and input fields */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #FFD700;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #001f3f;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+  height: 70px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  background-color: #FFD700;
+  color: #001f3f;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.btn:hover {
+  background-color: #e6c200;
+  transform: scale(1.05);
+}
+
+/* Back button */
+.back-btn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #FFD700;
+  color: #001f3f;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #e6c200;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  form {
+    padding: 25px 20px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <h1>Book Your Yacht</h1>
+
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="599473bb-50bb-4671-9acd-bbe3145ad354">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="date">Booking Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="people">Number of People</label>
+    <select id="people" name="people" required>
+      <option value="" disabled selected>Select</option>
+      <option>1-5</option>
+      <option>6-10</option>
+      <option>11-15</option>
+      <option>16+</option>
+    </select>
+
+    <label for="message">Special Requests</label>
+    <textarea id="message" name="message" placeholder="Enter any special requests..."></textarea>
+
+    <button type="submit" class="btn">Confirm Booking</button>
+  </form>
+
+  <a href="boats.html" class="back-btn">← Back to Ad-Boats</a>
+
+</body>
+</html>

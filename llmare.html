@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilmare</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #001f3f, #004080);
+      margin: 0;
+      padding: 40px 0;
+    }
+
+    h1 {
+      text-align: center;
+            color: #FFD700;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .gallery img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border: 2px solid #111827;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    }
+
+    .gallery img:hover {
+      filter: grayscale(1);
+      transform: scale(1.03);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .gallery img {
+        width: 90%;
+        height: auto;
+      }
+    }
+        .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ilmare Yacht</h1>
+  <div class="gallery">
+    <img src="llmare.jpg" alt="Ilmare yacht exterior">
+    <img src="llmare1.jpg" alt="Ilmare yacht interior">
+    <img src="llmare2.jpg" alt="Ilmare yacht interior">
+    <img src="llmare3.jpg" alt="Ilmare yacht interior">
+    <img src="llmare4.jpg" alt="Ilmare yacht interior">
+    <img src="llmare5.jpg" alt="Ilmare yacht interior">
+    <img src="llmare6.jpg" alt="Ilmare yacht interior">
+    <img src="llmare7.jpg" alt="Ilmare yacht interior">
+    <img src="llmare8.jpg" alt="Ilmare yacht interior">
+  </div>
+    <a href="booking.html" class="btn">Book Now</a>
+
+    <a href="services.html" class="back-btn">← Back to Service</a>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SunShine</title>
+  <style>
+    /* Reset & base setup */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #001f3f, #004080);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    p {
+      text-align: center;
+      max-width: 800px;
+      color: #e7dfdf;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #003d99;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      filter: brightness(1.05);
+    }
+
+    footer {
+      text-align: center;
+      color: #dbd4d4;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 160px;
+      padding: 10px 10px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SunShine</h1>
+  <div class="gallery">
+    <img src="sunshine.jpg" alt="sunshine yacht exterior">
+    <img src="sunshine1.jpg" alt="sunshine yacht interior">
+    <img src="sunshine2.jpg" alt="sunshine yacht interior">
+    <img src="sunshine3.jpg" alt="sunshine yacht interior">
+    <img src="sunshine4.jpg" alt="sunshine yacht interior">
+    <img src="sunshine5.jpg" alt="sunshine yacht interior">
+    <img src="sunshine6.jpg" alt="sunshine yacht interior">
+
+  </div>
+ <a href="booking.html" class="btn">Book Now</a>
+
+  <a href="boats.html" class="back-btn">← Back to Ad-Boats</a>
+
+  <footer>© 2025 Royal Boat Marine | All Rights Reserved</footer>
+   
+</body>
+</html>

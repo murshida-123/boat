@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal1</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #001f3f, #004080);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #FFD700;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+   div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+   div img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border: 2px solid #0110dbbe;
+  border-radius: 13px;
+  box-shadow: 4px 7px 7px 0px #00000042;
+  cursor: pointer;
+  margin: 10px;
+  transition: 400ms;
+}
+
+   div img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+    .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+        margin-bottom: 12px;
+
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+    @media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+    margin-top: 15px;
+  }
+  div img {
+    max-width: 100%;
+    margin: 8px 0;
+  }
+  .btn, .back-btn {
+    width: 90%;
+  }
+}
+  </style>
+</head>
+<body>
+  <h1>Royal1</h1>
+
+  <div>
+    <img src="royal1.jpg" alt="royal1-interior">
+    <img src="royal1-1.jpg" alt="royal1-interior">
+    <img src="royal1-3.jpg" alt="royal1-interior">
+    <img src="royal1-2.jpg" alt="royal1-interior">
+    <img src="royal1-4.jpg" alt="royal1-interior">
+    <img src="royal1-6.jpg" alt="royal1-interior">
+    <img src="royal1-7.jpg" alt="royal1-interior">
+    <img src="royal1-5.jpg" alt="royal1-interior">
+  </div>
+
+  <!-- ✅ Book Now button -->
+  <a href="booking.html" class="btn">Book Now</a>
+
+  <a href="services.html" class="back-btn">← Back to Services</a>
+
+</body>
+</html>

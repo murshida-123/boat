@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AD-Boats | Royal Boat Marine</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* -------- Base Styles -------- */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body {
+      background-color: #f5f7fa;
+      color: #002b5b;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+
+    }
+    header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 10;
+}
+/* ✅ Hamburger Menu (for mobile) */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: #002b5b;
+  cursor: pointer;
+}
+
+/* ✅ Mobile Responsive Navbar */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #ffffffee;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+}
+
+    /* -------- Carousel Container -------- */
+    .carousel {
+  position: relative;
+  width: 95%;
+  max-width: 1700px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  background: #111;
+
+  /* Add this line 👇 */
+  margin-top: 90px; /* adjust between 40px–100px as you like */
+}
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      will-change: transform;
+    }
+
+    /* -------- Slides -------- */
+    .slide {
+      min-width: 100%;
+      height: 520px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      background: rgba(0,43,91,0.65);
+      color: #fff;
+      padding: 20px 25px;
+      border-radius: 10px;
+      max-width: 70%;
+      backdrop-filter: blur(4px);
+    }
+
+    .content .name {
+      font-size: 1.6rem;
+      color: #d4af37;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .content .des {
+      font-size: 1rem;
+      line-height: 1.45;
+      margin-bottom: 15px;
+    }
+
+    .content .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #d4af37;
+      color: #002b5b;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .content .btn:hover {
+      background: #002b5b;
+      color: #fff;
+    }
+
+    /* -------- Arrows -------- */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,43,91,0.85);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+    }
+    .arrow:hover {
+      background: #d4af37;
+      color: #002b5b;
+    }
+    .arrow.prev { left: 15px; }
+    .arrow.next { right: 15px; }
+
+    /* -------- Dots -------- */
+    .dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 6;
+    }
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .dot.active {
+      background: #d4af37;
+      box-shadow: 0 0 0 4px rgba(212,175,55,0.12);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+    }
+    /* Footer */
+footer {
+  background: #001a33;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+    /* -------- Responsive Styles -------- */
+
+/* For tablets and small laptops */
+@media (max-width: 900px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .slide {
+    height: 420px;
+    padding: 20px;
+  }
+
+  .content {
+    max-width: 85%;
+    padding: 15px;
+  }
+
+  .content .name {
+    font-size: 1.4rem;
+  }
+
+  .content .des {
+    font-size: 0.95rem;
+  }
+
+  /* Optional: smaller arrows */
+  .arrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 600px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .slide {
+    height: 320px;
+    padding: 14px;
+  }
+
+  .content {
+    max-width: 95%;
+    padding: 10px;
+  }
+
+  .content .name {
+    font-size: 1.2rem;
+  }
+
+  .content .des {
+    font-size: 0.85rem;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Make navbar stack or hide links behind a menu */
+  .nav-links {
+    display: none; /* if you don’t have a mobile menu yet */
+  }
+
+  .logo img {
+    height: 45px;
+  }
+}
+
+/* For very small devices (under 400px) */
+@media (max-width: 400px) {
+  .slide {
+    height: 280px;
+  }
+
+  .content {
+    padding: 8px;
+  }
+
+  .content .name {
+    font-size: 1rem;
+  }
+
+  .content .des {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 600px) {
+  .slide {
+    height: 300px;
+  }
+}
+.slide-content {
+  padding: 20px 20px 30px; /* increased bottom padding */
+}
+  </style>
+</head>
+<body>
+ <!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="Royal Boat Marine Logo" height="60">
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#">AD-Boats</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="track">
+        <!-- Royal 7 -->
+      <section class="slide" style="background-image:url('royal7.jpg')">
+        <div class="content">
+          <div class="name">Royal 7</div>
+          <div class="des">
+            Royal 7 — AED 300 per hour  luxury yacht with premium seating and sunset views. Ideal for romantic trips & private charters.
+          </div>
+          <a href="royal7.html" class="btn">See More</a>
+        </div>
+      </section>
+ <!--Malak 2-->
+       <section class="slide" style="background-image:url('malak.jpg')">
+        <div class="content">
+          <div class="name">Malak</div>
+          <div class="des">
+           Malak - The Malak boat rental costs 300 per hour and can accommodate up to 6 people. The rental includes a trip to Abu Dhabi Corniche with water.
+          </div>
+          <a href="malak.html" class="btn">See More</a>
+        </div>
+      </section>
+     
+      <!--Happynees-->
+      <section class="slide" style="background-image:url('happynees.jpg')">
+        <div class="content">
+          <div class="name">Happynees</div>
+          <div class="des">
+            Happynees - Cruise along the Abu Dhabi Corniche aboard Happynees - ideal for 15 people. Includs water and soft drinks for just 500 AED per hour.    
+        </div>
+          <a href="happynees.html" class="btn">See More</a>
+        </div>
+      </section>
+
+       <!-- Fishing -->
+      <section class="slide" style="background-image:url('fishing.jpg')">
+        <div class="content">
+          <div class="name">Fishing</div>
+          <div class="des">
+            Fishing - Open sea fishing for five hours 1500 /- dirhams including water + soft drinks + ice cubes + fishing tools
+          </div>
+          <a href="Fishing.html" class="btn">See More</a>
+        </div>
+      </section>
+      <!-- Royal 3 -->
+      <section class="slide" style="background-image:url('royal3.jpg')">
+        <div class="content">
+          <div class="name">Royal 3</div>
+          <div class="des">
+            Royal 3 — AED 450. Small-group private boat for up to 10 people. Perfect for Corniche tours and family outings.
+          </div>
+          <a href="royal3.html" class="btn">See More</a>
+        </div>
+      </section>
+
+     
+      <!--Sunshine-->
+      <section class="slide" style="background-image:url('sunshine.jpg')">
+        <div class="content">
+          <div class="name">SunShine</div>
+          <div class="des">
+            SunShine - People 12,Price per hour 600,Including water soft drinks balloons ice cubes
+          </div>
+          <a href="sunshine.html" class="btn">See More</a>
+        </div>
+      </section>
+
+      <!-- Royal 4 -->
+      <section class="slide" style="background-image:url('royal4.jpg')">
+        <div class="content">
+          <div class="name">Royal 4</div>
+          <div class="des">
+            Royal 4 — AED 700. Big party boat for up to 20 guests; includes water, soft drinks, ice and celebration setup.
+          </div>
+          <a href="royal4.html" class="btn">See More</a>
+        </div>
+      </section>
+
+      <!-- Azimut -->
+      <section class="slide" style="background-image:url('azimut.jpg')">
+        <div class="content">
+          <div class="name">Azimut</div>
+          <div class="des">
+            Azimut — AED 700/hr. 55 ft yacht for up to 15 people, with soft drinks, ice, and balloons included. Perfect for Abu Dhabi Corniche tours.
+          </div>
+          <a href="azimut.html" class="btn">See More</a>
+        </div>
+      </section>
+      <!-- Royal 8 -->
+      <section class="slide" style="background-image:url('royal8-0.jpg')">
+        <div class="content">
+          <div class="name">Royal 8</div>
+          <div class="des">
+          Royal 8 - Capacity 10 Per hour 500 dirhams including Abu Dhabi corniche tour with water + soft drinks + balloons decorations
+          </div>
+          <a href="royal8.html" class="btn">See More</a>
+        </div>
+      </section>
+      <!--Shalli-->
+      <section class="slide" style="background-image:url('shalli.jpg')">
+        <div class="content">
+          <div class="name">Shalli</div>
+          <div class="des">
+            Shalli - designed for 7 guests,Perfect for a Corniche cruise. Includes water.Price:350 AED/hour.
+          </div>
+          <a href="shalli.html" class="btn">See More</a>
+        </div>
+      </section>
+
+      <!--Techno-->
+            <section class="slide" style="background-image:url('techno.jpg')">
+        <div class="content">
+          <div class="name">Techno 65 feet</div>
+          <div class="des">
+            Techno 65 feet - Experience Abu Dhabi's beauty aboard the techno 65 feet yacht.Perfect for 15 guest(Room 2),including water,soft drinks,and balloons-only 750 AED per hour.
+          </div>
+          <a href="techno.html" class="btn">See More</a>
+        </div>
+      </section>
+      <!-- BigBoat -->
+      <section class="slide" style="background-image:url('bigboat.jpg')">
+        <div class="content">
+          <div class="name">BigBoat</div>
+          <div class="des">
+            BigBoat - Enjoy a grand Abu Dhabi corniche tour on the BigBoat  for up to 15 guest. Include water and soft drinks - all for 600 AED per hour. 
+        </div>
+          <a href="bigBoat.html" class="btn">See More</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Arrows -->
+    <button class="arrow prev" id="prevBtn" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="arrow next" id="nextBtn" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <!-- Dots -->
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('dots');
+      let currentIndex = 0;
+      
+
+      // Create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        dotsContainer.appendChild(dot);
+      });
+      const dots = Array.from(dotsContainer.children);
+
+      function updateUI() {
+        const containerWidth = track.parentElement.clientWidth;
+        track.style.transform =` translateX(-${currentIndex * containerWidth}px)`;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+      }
+
+      function goTo(index) {
+        const count = slides.length;
+        currentIndex = ((index % count) + count) % count;
+        updateUI();
+      }
+
+      nextBtn.addEventListener('click', () => { goTo(currentIndex + 1); resetAutoplay(); });
+      prevBtn.addEventListener('click', () => { goTo(currentIndex - 1); resetAutoplay(); });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+          const idx = parseInt(e.currentTarget.dataset.index, 10);
+          goTo(idx);
+          resetAutoplay();
+        });
+      });
+
+      
+
+      window.addEventListener('resize', updateUI);
+      
+    });
+   
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Optional: change ☰ to ✖ when opened
+    if (navLinks.classList.contains('active')) {
+      toggle.innerHTML = '&times;';
+    } else {
+      toggle.innerHTML = '&#9776;';
+    }
+  });
+  </script>
+
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/971553989888" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+</a>
+<!-- Footer -->
+  <footer>
+    <p>© 2025 Royal Boat Marine | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

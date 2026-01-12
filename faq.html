@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Royal Boat Marine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="Royal Boat Marine Logo" height="60">
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="boats.html">AD-Boats</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  <!-- Contact Hero Section -->
+  <section class="hero contact-hero">
+    <div class="hero-overlay">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you — Let’s connect!</p>
+    </div>
+  </section>
+
+  <!-- Contact Info Section -->
+  <section class="contact-page">
+    <h2>Get in Touch</h2>
+    <p>Reach out to us for bookings, inquiries, or support. Our team will assist you promptly.</p>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Details</h3>
+        <p><strong>📍 Address:</strong> AbuDhabi Marine , UAE</p>
+        <p><strong>📞 Phone:</strong> +971 553 989 888</p>
+        <p><strong>📧 Email:</strong> info@royalboatmarine.com</p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="599473bb-50bb-4671-9acd-bbe3145ad354">
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Royal Boat Marine | All Rights Reserved</p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/971553989888" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+  </a>
+  <script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+
+    // Optional: change ☰ to ✖ when opened
+    if (navLinks.classList.contains('active')) {
+      toggle.innerHTML = '&times;';
+    } else {
+      toggle.innerHTML = '&#9776;';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Royal Boat Marine</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== Service Page Styles ===== */
+
+    .service-hero {
+      height: 90vh;
+      background: url('boat2.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .service-hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .service-hero .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+
+    .service-hero h1 {
+      font-size: 3rem;
+      color: #d4af37;
+      letter-spacing: 1px;
+    }
+
+    .service-hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .services-section {
+      padding: 80px 10%;
+      background: #f7f9fc;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      color: #0a2740;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .services-section h2::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: #d4af37;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      color: #002b5b;
+      margin: 20px 0 10px;
+    }
+
+    .service-card p {
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0 20px 25px;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 10px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" alt="Royal Boat Marine Logo" height="60">
+    </div>
+
+    <!-- Hamburger Icon -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="boats.html">AD-Boats</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Hero -->
+  <section class="service-hero">
+    <div class="hero-text">
+      <h1>Our Premium Marine Services</h1>
+      <p>Precision. Luxury. Excellence.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services-section">
+    <h2>What We Offer</h2>
+    <div class="services-grid">
+<div class="service-card">
+<a href="llmare.html"><img src="llmare.jpg" alt="Yacht Maintenance"></a>
+       <h3>Yacht Maintenance(Llmare)</h3>
+         <p>Keep your yacht in top condition with our complete cleaning, polishing, and mechanical maintenance services.</p>
+      </div>
+      <div class="service-card">
+        <a href="royal1.html">        <img src="royal1.jpg" alt="Yacht Charter">
+</a>
+        <h3>Yacht Charter(Royal1)</h3>
+        <p>Experience the open sea in style. Our charter options offer unforgettable adventures and luxury comfort.</p>
+      </div>
+      <div class="service-card">
+<a href="newalbum.html">
+          <img src="newalbum.jpg" alt="Boat Sales">
+
+</a>        <h3>New Album</h3>
+<p>New album Capacity 50,Per hour 1200,Including Abu Dhabi corniche tour water , soft drinks, balloons decoration </p>      </div>
+
+      <div class="service-card">
+<a href="royal2.html">
+          <img src="royal2.jpg" alt="Boat Sales">
+
+</a>        <h3>Royal 2</h3>
+        <p>Discover a curated selection of premium yachts and boats for sale, with personalized assistance at every step.</p>
+      </div>
+      <div class="service-card">
+        <a href="album.html">        <img src="album.jpg" alt="Yacht Charter">
+</a>
+        <h3>Album</h3>
+        <p>Album - Capacity 50 people,Price 1300 per hour including water + soft drinks + balloons Abu Dhabi corniche tour </p>
+      </div>
+       <div class="service-card">
+        <a href="princess.html">        <img src="Princess4.jpg" alt="Yacht Charter">
+</a>
+        <h3>Princess</h3>
+        <p>Princess - Capacity 15,Per hour 1250 dirhams,Including water + soft drinks + balloons + ice cubes </p>
+
+      </div>
+
+    </div>
+    
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Royal Boat Marine | All Rights Reserved</p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/971553989888" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+</a>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

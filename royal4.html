@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal 4 | Gallery</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom right, #001f3f, #004080);
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 40px;
+      font-size: 2rem;
+      color: #FFD700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 20px 5%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 20px rgba(0, 43, 91, 0.3);
+    }
+     .caption p {
+      color: #f1e0e0;
+      font-size: 1rem;
+      margin-top: 8px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Lightbox (Full Image View) */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .lightbox.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      padding: 5px 12px;
+      transition: 0.3s;
+    }
+
+    .close-btn:hover {
+      background: #d4af37;
+      color: #002b5b;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+     .btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #e6c200;
+      transform: scale(1.05);
+    }
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      width: 180px;
+      padding: 12px 25px;
+      background-color: #FFD700;
+      color: #001f3f;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #e6c200;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <h1>Royal 4 Yacht Gallery</h1>
+
+  <div class="gallery-container">
+    <img src="royal4.jpg" alt="Royal 4 Yacht Exterior">
+    <img src="royal4-1.jpg" alt="Royal 4 Interior 1">
+    <img src="royal4-2.jpg" alt="Royal 4 Interior 2">
+    <img src="royal4-3.jpg" alt="Royal 4 Interior 3">
+  </div>
+  <div class="caption">
+    <p>            Royal 4 — AED 700.
+     Big party boat for up to 20 guests;
+      includes water, soft drinks, ice and celebration setup.
+</p>
+
+  </div>
+  
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+<a href="booking.html" class="btn">Book Now</a>
+  <a href="boats.html" class="back-btn">← Back to Ad-Boats</a>
+  <footer>
+    <p>© 2025 Royal Boat Marine | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('closeBtn');
+    const images = document.querySelectorAll('.gallery-container img');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+  </script>
+      
+
+</body>
+</html>
